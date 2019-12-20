@@ -2,6 +2,7 @@
 
 import { Constructable } from 'discord.js';
 import { ShardingManager, BaseCluster } from '..';
+import { promisify } from 'util';
 
 export interface UnkownObject {
 	[key: string]: any;
@@ -66,7 +67,7 @@ export function isObject(input: any) {
 }
 
 export function sleep(duration: number) {
-	return new Promise((resolve) => setTimeout(resolve, duration));
+	return promisify(setTimeout)(duration);
 }
 
 export function calcShards(shards: number, guildsPerShard: number): number {
