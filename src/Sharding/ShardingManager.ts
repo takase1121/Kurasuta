@@ -51,6 +51,7 @@ export class ShardingManager extends EventEmitter {
 	public respawn: boolean;
 	public timeout: number;
 	public retry: boolean;
+	public nodeArgs?: Array<string>;
 	public ipc: MasterIPC;
 	public nodeArgs?: Array<string>;
 
