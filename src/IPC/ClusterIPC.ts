@@ -1,9 +1,10 @@
 import { EventEmitter } from 'events';
-import { Client as VezaClient, NodeMessage, ClientSocket } from 'veza';
 import { Client, Util } from 'discord.js';
 import { IPCEvents } from '../Util/Constants';
 import { IPCResult } from '..';
 import { IPCError } from '../Sharding/ShardClientUtil';
+
+import fastRedis = require('redis-fast-driver');
 
 export interface IPCRequest {
 	op: number;
@@ -15,7 +16,7 @@ export class ClusterIPC extends EventEmitter {
 	public client: Client;
 	public node: VezaClient;
 
-	constructor(discordClient: Client, public id: number, public socket: string | number) {
+	constructor(discordClient: Client, public id: number, public socket: object) {
 		super();
 		this.client = discordClient;
 		this.node = new VezaClient(`Cluster ${this.id}`)

@@ -18,8 +18,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "a85-native": "^1.0.3",
     "discord.js": "discordjs/discord.js",
     "node-fetch": "^2.6.0",
+    "redis-fast-driver": "^2.1.5",
     "veza": "^1.1.0"
   },
   "devDependencies": {
