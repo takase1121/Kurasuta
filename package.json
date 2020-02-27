@@ -20,7 +20,7 @@
   "dependencies": {
     "discord.js": "discordjs/discord.js",
     "node-fetch": "^2.6.0",
-    "veza": "^1.1.0"
+    "veza": "github:takase1121/veza#32c176cbdd0b0dbb0dcd46b1f09e6c823df0018a"
   },
   "devDependencies": {
     "@types/node": "^12.7.3",
